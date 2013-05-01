@@ -1,0 +1,59 @@
+﻿@model PYPProfileDotNet.Models.History
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>History</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Game.GameId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Game.GameId)
+            @Html.ValidationMessageFor(model => model.Game.GameId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.User.UserId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.User.UserId)
+            @Html.ValidationMessageFor(model => model.User.UserId)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date)
+            @Html.ValidationMessageFor(model => model.Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Score)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Score)
+            @Html.ValidationMessageFor(model => model.Score)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
